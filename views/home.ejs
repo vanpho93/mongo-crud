@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Learning English</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid lightblue;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/word" method="POST">
+        <input type="text" name="en" placeholder="Enter english word">
+        <br><br>
+        <input type="text" name="vn" placeholder="Enter english word">
+        <br><br>
+        <button>Submit</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <td>Word</td>
+            <td>Meaning</td>
+            <td>Modify</td>
+        </tr>
+        <% words.forEach(e => { %>
+            <tr>
+                <td>
+                    <%= e.en %>
+                </td>
+                <td>
+                    <%= e.vn %>
+                </td>
+                <td>
+                    <a href="/remove/<%= e._id %>">Remove</a>
+                    <br>
+                    <a href="/edit/<%= e._id %>">Edit</a>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+
+</html>

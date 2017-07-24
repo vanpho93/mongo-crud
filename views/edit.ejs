@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Learning English</title>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid lightblue;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="import" href="a.html">
+    <form action="/word/<%=  _id %>" method="POST">
+        <input type="text" name="en" placeholder="Enter English word" value="<%= en %>">
+        <br><br>
+        <input type="text" name="vn" placeholder="Enter Vietnamese word" value="<%= vn %>">
+        <br><br>
+        <button>Submit</button>
+    </form>
+</body>
